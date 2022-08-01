@@ -1,12 +1,13 @@
 pipeline{
    agent{
-                docker { image 'maven:3.8.6-jdk-11'}
+                label 'slave'
             }
     stages{
-        stage('Maven Test'){
+        stage('Hello'){
             
             steps{
-                sh 'mvn --version'
+                sh 'java --version'
+                sh 'pwd'
             }
         }
     }
